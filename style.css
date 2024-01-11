@@ -1,0 +1,597 @@
+/* o asterisco é um seetor que aplica para todos os elementos do site */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* estilização para o body */
+body{
+    background-color: #000;
+    height: 100vh;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* display flex, separa da esquerda e direita */
+.flex{
+    display: flex;
+}
+
+/* formatando botão de contato */
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #07a3f2;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+h2.titulo{
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: #07a3f2;
+}
+
+button:hover, form .btn-enviar input:hover{
+    box-shadow: 0px 0px 20px #07a4f2;
+    transform: scale(1.05);
+}
+
+/* estilo cabeçalho */
+header{
+    padding: 20px 4%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    z-index: 99999;
+
+}
+
+/* classe interface */
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+/* cor das letras (cinza), tirando o sublinhado e adicionando propriedades do inline e block */
+header a{
+    color: #7a7a7a;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header .logo img{
+    width: 170px;
+}
+
+/* cor das letras ficam brancas quando cursos chega em cima, transform é tipo uma animação pra zoom e transition é o tempo que ele faz esse zoom*/
+header nav.menu-desktop a:hover{
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* retirando a bolinha das listas */
+header nav ul{
+    list-style-type: none;
+    
+}
+
+/* alinhando lado a lado e dando espaçamento */
+header nav.menu-desktop ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+/* Estilo do menu mobile */ 
+.btn-abrir-menu i{
+    color: #07a3f2;
+    font-size: 40px;
+}
+
+.menu-mobile{
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.btn-abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+
+}
+
+.menu-mobile .btn-fechar i{
+    color:#07a3f2;
+    font-size: 30px;
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover{
+    background-color: #07a3f2;
+    color: #000;
+}
+
+.overlay-menu{
+    background-color: #00000083;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+/* ESTILO TOPO DO SITE */
+section.topo-do-site{
+    padding: 40px 4%;
+    margin-top: 200px;
+}
+
+/* alinhando ao centro e o distanciamento da foto e texto */
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* cor da h1, tamanho da fonte e alinhando o texto */
+.topo-do-site h1{
+    color: #fff;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+/* ponto */
+.topo-do-site .txt-topo-site h1 span{
+    color: #07a4f2;
+}
+
+/* o parágrafo */
+.topo-do-site .txt-topo-site p{
+    color: #fff;
+    margin: 40px 0;
+}
+
+/* position deve ser diferente do padrao para funcionar a animação e configurar a animação: o tempo e a suavidade. Infinite para funcionar para sempre e alternando */
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+    width: 350px;
+    height: 330px;
+}
+
+/* animação */
+@keyframes flutuar {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* ESTILO DAS HABILIDADES */
+
+section.habilidades{
+    padding: 40px 4%;
+    margin-top: 100px;
+}
+
+section.habilidades .flex{
+    gap: 20px;
+}
+
+.habilidades .habilidades-box{
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.habilidades .habilidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.534);
+}
+
+.habilidades .habilidades-box i{
+    font-size: 35px;
+    color:#07a3f2;
+}
+
+.habilidades .habilidades-box h3{
+    font-size: 28px;
+    margin: 8px 0;
+}
+
+/* ESTILO TOPO DO SITE - SOBRE */
+
+section.sobre{
+    padding: 80px 4%;
+}
+
+/* DEIXAR LETRA E FOTO LADO A LADO */
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+/* COR DO TEXTO SOBRE */
+.sobre .txt-sobre{
+    color: #fff;
+    
+}
+
+/* ESTILO DO TEXTO H2 */
+.sobre .txt-sobre h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+/* SPAN */
+.sobre .txt-sobre h2 span{
+    color:#07a3f2;
+    display: block;
+}
+
+/* PARÁGRAFO */
+.sobre .txt-sobre p{
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre .img-sobre img {
+    position: relative;
+    width: 360px; /* Garante que a largura máxima é 100% da largura do contêiner pai */
+    height: 310px; /* Mantém a proporção da imagem ao ajustar a largura */
+}
+
+.btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    color: #000;
+    background-color:#07a3f2;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+/* estilo do portfólio */
+section.portfolio{
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.534);
+}
+
+.txt-portfolio{
+    color: #fff;
+    text-align: center;
+    padding-top: 5%;
+    
+}
+
+.txt-portfolio h2 span{
+    color: #07a3f2;
+}
+
+section.portfolio .flex {
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.img-port{
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 0% 100%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+}
+
+
+.img-port:hover{
+    background-position: 100% 100%;
+}
+
+ 
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000bc;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+.github button {
+    width: 270px;
+    height: 40px; /* Ajuste a altura conforme necessário */
+    border: 0;
+    border-radius: 30px;
+    background-color: #07a3f2;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+    margin: 50px auto 0; /* Espaçamento no topo, centralizando horizontalmente */
+}
+
+.github a {
+    color: #000;
+    text-align: center;
+    display: block; /* Garante que o link ocupa toda a largura do botão */
+}
+
+
+/* estilo do formulário de contato */
+section.formulario{
+    padding: 80px 4%;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input, form textarea{
+    width: 100%;
+    background-color: #424242;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+form textarea{
+    resize: none;
+    max-height: 200px;
+}
+
+form .btn-enviar{
+    margin-top: 20px;   
+    text-align: center;
+}
+
+form .btn-enviar input{
+    width: 120px;
+    background-color: #07a3f2;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* Estilo do Rodapé */
+
+/* padding é o espaçamento na parte de cima e de baixo, 4% por padrão nas LATERAIS */
+footer{
+    padding: 10px 4%;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.534);
+}
+
+footer .flex{
+    justify-content: space-between;
+}
+
+footer .line-footer{
+    padding: 20px 0;
+}
+
+.borda{
+    border-top: 2px solid #07a3f2;
+}
+
+footer .line-footer p i{
+    color:#07a3f2;
+    font-size: 22px;
+}
+
+footer .line-footer p a{
+    color:#fff;
+}
+
+footer .interface .line-footer .flex .logo-footer img{
+    width: 30%;
+}
+
+.btn-abrir-menu{
+    display: none;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #07a3f2;
+}
+
+
+@media screen and (max-width: 1020px){
+    /*classes gerais*/
+    .flex {
+        flex-direction: column;
+    }
+
+    h2.titulo{
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+
+    h2.titulo {
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    /*CABEÇALHO*/
+    .menu-desktop, .btn-contato{
+        display: none;
+    }
+
+    /*Topo do Site*/
+    section.topo-do-site .flex{
+        gap: 40px;
+    }
+
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1{
+        font-size: 30px;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+
+    /*Habilidades*/
+    section.habilidades{
+        padding: 40px 8%;
+    }
+
+    /*Sobre*/
+    section.sobre{
+        padding: 80px 8%;
+    }
+
+    .sobre .txt-sobre h2{
+        font-size: 34px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .btn-social{
+        text-align: center;
+    }
+
+    .img-sobre img{
+        width: 100%;
+    }
+
+    /* Portfólio */
+
+    section.portfolio {
+        padding: 80px 8%;
+    }
+
+    .img-port{
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    section.portfolio .flex{
+        gap: 60px;
+    }
+
+    .github button {
+        width: 270px;
+    height: 40px; /* Ajuste a altura conforme necessário */
+    border: 0;
+    border-radius: 30px;
+    background-color: #07a3f2;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+    margin: 50px auto 0; /* Espaçamento no topo, centralizando horizontalmente */  
+    }
+    
+    
+    .github a{
+        color:#000;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Rodapé */
+
+    footer .flex{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer{
+        text-align: center;
+    }
+
+    .btn-abrir-menu{
+        display: block;
+    }
+}
